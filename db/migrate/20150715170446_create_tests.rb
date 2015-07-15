@@ -1,6 +1,6 @@
-class CreatePessoas < ActiveRecord::Migration
+class CreateTests < ActiveRecord::Migration
   def change
-    create_table :pessoas do |t|
+    create_table :tests do |t|
       t.string :nome
 
       t.timestamps null: false
