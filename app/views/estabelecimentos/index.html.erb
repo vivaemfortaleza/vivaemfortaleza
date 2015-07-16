@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Estabelecimentos</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th>E-Mail</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @estabelecimentos.each do |estabelecimento| %>
+      <tr>
+        <td><%= estabelecimento.nome %></td>
+        <td><%= estabelecimento.endereco %></td>
+        <td><%= estabelecimento.email %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon-triangle-right"></span> Exibir'.html_safe, estabelecimento %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon-edit"></span> Editar'.html_safe, edit_estabelecimento_path(estabelecimento) %></td>
+        <td><%= link_to '<span class="glyphicon glyphicon glyphicon-trash"></span> Remover'.html_safe, estabelecimento, method: :delete, data: { confirm: 'Confirmar remoção?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Cadastrar Estabelecimento', new_estabelecimento_path, class: 'btn btn-danger' %>

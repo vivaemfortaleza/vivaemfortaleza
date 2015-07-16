@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @estabelecimento.nome %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @estabelecimento.endereco %>
+</p>
+
+<p>
+  <strong>Numero:</strong>
+  <%= @estabelecimento.numero %>
+</p>
+
+<p>
+  <strong>Bairro:</strong>
+  <%= @estabelecimento.bairro %>
+</p>
+
+<p>
+  <strong>Cidade:</strong>
+  <%= @estabelecimento.cidade %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @estabelecimento.estado %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @estabelecimento.email %>
+</p>
+
+<p>
+  <strong>Site:</strong>
+  <%= @estabelecimento.site %>
+</p>
+
+<p>
+  <strong>Fanpage:</strong>
+  <%= @estabelecimento.fanpage %>
+</p>
+
+<%= link_to 'Editar', edit_estabelecimento_path(@estabelecimento), class: 'btn btn-danger' %> 
+<%= link_to 'Voltar', estabelecimentos_path, class: 'btn btn-default' %>

@@ -13,3 +13,156 @@
  *= require_tree .
  *= require_self
  */
+ a { color: #B81313;}
+html,body{height:100%; font-family: 'Nunito', 'Heveltica';}
+
+/*Header*/
+.header-body{
+	padding: 0px 0px 0px 0px !important;
+	margin: 0px 0px 0px 0px;
+	background-image: url("../img/bg-5.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height:100%;
+	position:relative;
+	transition: background 0.3s linear;
+	transition: display 0.5 linear;
+}
+l
+.header-body div.navbar-header{ display: inline; }
+.header-body:hover div.navbar-header{ display: none; }
+
+/* Search Box **/
+.view{ padding-top: 6em; position:absolute; top:0; left:0; width:100%; height:100%;  }
+@media (max-width: 750px) {
+	.view{ padding-top: 5em; position:absolute; top:0; left:0; width:100%; height:100%;  }
+}
+@media (min-width: 1600px) {
+	.view{ padding-top: 20em; position:absolute; top:0; left:0; width:100%; height:100%;  }
+}
+
+/* App Template **/
+#app nav{
+}
+
+#template{
+	margin-top: 5em;
+}
+
+/* Busca **/
+.image-search{
+	height: 180px;
+	background-size: cover;
+}
+.image-search-1{background-image: url("http://4.bp.blogspot.com/-kAt6Big_b1k/VIJBpOI395I/AAAAAAAAMmY/2b0KDx_6Nkk/s1600/sb1.png");}
+.image-search-2{background-image: url("http://www.pastoepizzas.com.br/v2/principal/imagens/logo.png");}
+.image-search-3{background-image: url("http://boinegrogrill.com.br/img/logo: .png;");}
+
+
+
+/*Header*/
+.header{ background-image: url("../img/bg1-red.jpg"); background-size: cover; }
+
+/** Jumbotrom */
+.motivational{
+	background-color: white;
+}
+
+/*Carrousel*/
+ul[rn-carousel] {
+    width:650px;
+    height:400px;
+    margin: 0 auto;
+}
+
+/*Nav Bars*/
+.navbar-default{ background-color: #B81313 !important; border-color: #B81313; }
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover{
+	color: #FFF;
+  	background-color: #D83535;
+}
+
+.navbar-default .navbar-nav>li>a { color: #FFF; }
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>li>a:focus { color: #F4A1A1; }
+
+.navbar-default .navbar-brand { color: #FFF; }
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus { color: #F4A1A1; }
+
+.navbar-brand{  padding: 3px 3px; }
+
+/*Noticias*/
+.noticias { height: 418px; }
+
+/** Novidades*/
+.main-news{ background-image: url('../img/eventos/1.jpg'); height: 300px; transition: opacity .25s ease-in-out;}
+.main-news:hover{ opacity: 0.7; }
+
+.news{ height: 150px; background-repeat: no-repeat; background-size: cover; transition: opacity .25s ease-in-out;}
+.news:hover{ opacity: 0.7; }
+
+.news p, .main-news p{position:absolute; bottom:5px; font-size: 22px; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4); color: #FFF;}
+.news-1{ background-image: url('../img/eventos/2.jpg'); }
+.news-2{ background-image: url('../img/eventos/3.jpg'); }
+.news-3{ background-image: url('../img/eventos/4.jpg'); }
+.news-4{ background-image: url('../img/eventos/5.jpg'); }
+
+/** Estabelecimento */
+#cover-estabelecimento{
+	position: relative;
+	height: 400px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-image: url('../img/estabelecimento/dia-da-pizza.jpg');
+}
+
+#cover-estabelecimento .cover-text{
+	position:absolute; bottom:5px; left: 10px; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.4); color: #FFF;
+}
+
+#cover-estabelecimento .cover-text a{ color: white !important; }
+#cover-estabelecimento .cover-text a:hover{ color: white !important; }
+#cover-estabelecimento .cover-text-header{ font-size: 28px; margin-bottom: 2px;}
+#cover-estabelecimento .cover-text-subheader{ font-size: 14px; }
+
+.thumb-estabelecimento{
+	height: 150px;
+}
+
+.darkred-panel{ color: white !important; background-color: #B81313 !important;; border-color: #B81313 !important;; }
+
+/*Footer*/
+.footer{
+	background-image: url('../img/footer.jpg');
+	background-size: auto 100%;
+    background-repeat: no-repeat;
+    height: 719px;
+}
+
+.footer ul{list-style-type:none; padding-top: 500px; text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3); color: #FFF;}
+.footer .infobox{ height: 650px; }
+
+@media (min-width: 1216px){
+	.footer{
+		background-image: url('../img/footer.jpg');
+		background-size: 100% auto;
+	    background-repeat: no-repeat;
+	}
+	.footer ul{ padding-top: 200px; }
+}
+
+@media (min-width: 1600px){
+	.footer ul{ padding-top: 300px; }
+}
+
+/*Utils*/
+.bolder{ font-weight: bolder; }
+.margin-top-1 { margin-top: 1em; }
+.margin-top-2 { margin-top: 2em; }
+.margin-top-3 { margin-top: 3em; }
+.margin-top-4 { margin-top: 4em; }
+.margin-top-5 { margin-top: 5em; }

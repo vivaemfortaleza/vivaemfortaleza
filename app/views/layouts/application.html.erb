@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Vivaemfortaleza</title>
+  <title>Viva em Fortaleza!</title>
 
+  <link href='http://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -10,7 +11,11 @@
 </head>
 <body>
 
-<%= yield %>
+<%= render file: 'layouts/menu' %>
+
+<div id="template" class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>
