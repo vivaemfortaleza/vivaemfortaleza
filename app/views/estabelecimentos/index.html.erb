@@ -2,6 +2,7 @@
 
 <h1>Estabelecimentos</h1>
 
+<% unless @estabelecimentos.empty? %>
 <table class="table table-striped">
   <thead>
     <tr>
@@ -25,6 +26,11 @@
     <% end %>
   </tbody>
 </table>
+<% else %>
+<div class="alert alert-danger">
+  Não existem estabelecimentos cadastrados
+</div>
+<% end %>
 
 <br>
 
