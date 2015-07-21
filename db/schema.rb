@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716011632) do
+ActiveRecord::Schema.define(version: 20150721024701) do
 
   create_table "estabelecimentos", force: :cascade do |t|
     t.string   "nome"
@@ -23,18 +23,37 @@ ActiveRecord::Schema.define(version: 20150716011632) do
     t.string   "email"
     t.string   "site"
     t.string   "fanpage"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.integer  "selos_id"
+    t.decimal  "menor_preco",    precision: 8, scale: 2
+    t.decimal  "maior_preco",    precision: 8, scale: 2
+    t.boolean  "estacionamento"
   end
 
-  create_table "people", force: :cascade do |t|
-    t.string   "nome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "estabelecimentos_selos", id: false, force: :cascade do |t|
+    t.integer "estacionamento_id", null: false
+    t.integer "selo_id",           null: false
+  end
+
+  create_table "horario_estabelecimentos", force: :cascade do |t|
+    t.integer  "dia"
+    t.time     "hora_inicial"
+    t.time     "hora_final"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.integer  "estabelecimentos_id"
   end
 
   create_table "pessoas", force: :cascade do |t|
     t.string   "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "selos", force: :cascade do |t|
+    t.string   "nome"
+    t.string   "classe_css"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
