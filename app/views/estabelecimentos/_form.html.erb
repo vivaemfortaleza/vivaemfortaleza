@@ -84,6 +84,22 @@
         <%= f.text_field :fanpage, class: 'form-control'%>
       </div>
     </div>
+
+  </div>
+
+
+  <div class="form-group">
+    <%= f.label :selos %> <br/>
+    <% Selo.all.each do |selo| %>
+      <label class="checkbox-inline">
+        <%= f.check_box(:selos, {:multiple => true}, selo) %> <i class="<%= selo.classe_css %>"></i> <%= selo.nome %>
+      </label>
+    <% end %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :estacionamento, "Possui Estacionamento?" %> <br/>
+    <%= f.check_box(:estacionamento) %>
   </div>
 
   <div class="actions">
