@@ -1,6 +1,13 @@
 class EstabelecimentosController < ApplicationController
   before_action :set_estabelecimento, only: [:show, :edit, :update, :destroy]
 
+  def new_horario
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+  
   # GET /estabelecimentos
   # GET /estabelecimentos.json
   def index

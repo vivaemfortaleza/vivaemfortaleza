@@ -8,10 +8,10 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-Selos.create(nome: 'Acessibilidade', classe_css: 'fa fa-wheelchair')
-Selos.create(nome: 'Ar Condicionado', classe_css: 'fa fa-server')
-Selos.create(nome: 'Espaço para Criança', classe_css: 'fa fa-child')
-Selos.create(nome: 'Fraldário', classe_css: 'fa fa-user')
-Selos.create(nome: 'Manobrista', classe_css: 'fa fa-car')
-Selos.create(nome: 'Música Ambiente', classe_css: 'fa fa-volume-up')
-Selos.create(nome: 'Música Ao Vivo', classe_css: 'fa fa-music')
+Selo.create(nome: 'Acessibilidade', classe_css: 'fa fa-wheelchair')
+Selo.create(nome: 'Ar Condicionado', classe_css: 'fa fa-server')
+Selo.create(nome: 'Espaço para Criança', classe_css: 'fa fa-child')
+Selo.create(nome: 'Fraldário', classe_css: 'fa fa-user')
+Selo.create(nome: 'Manobrista', classe_css: 'fa fa-car')
+Selo.create(nome: 'Música Ambiente', classe_css: 'fa fa-volume-up')
+Selo.create(nome: 'Música Ao Vivo', classe_css: 'fa fa-music')

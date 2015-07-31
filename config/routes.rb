@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "estabelecimentos/new_horario" => 'estabelecimentos#new_horario', :as => :new_horario
   resources :usuarios
   resources :estabelecimentos
   # The priority is based upon order of creation: first created -> highest priority.
