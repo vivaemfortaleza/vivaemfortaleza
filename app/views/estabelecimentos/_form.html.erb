@@ -103,20 +103,13 @@
 
   <div class="form-group">
     <%= f.label :horarios, "Horários" %> <br/>
-    <%= link_to 'Adicionar Horário', new_horario_path,  
-                 {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window', class: "btn btn-default"}  %>
+    <%= link_to 'Adicionar Horário', new_horario_path,
+                 {:remote => true, 'data-toggl' =>  "modal", 'data-target' => 'modal-window', class: "btn btn-default"}  %>
   </div>
 
   <div class="actions margin-top-3">
     <%= f.submit 'Salvar', class: 'btn btn-danger'%>
     <%= link_to 'Voltar', estabelecimentos_path, class: 'btn btn-default' %>
-  </div>
-  
-  <div class="modal fade" id="modal-window" tabindex="-1" role="dialog">  
-    <div class="modal-dialog" role="dialog">
-      <div class="modal-content">
-      </div>
-    </div>
   </div>
 
 <% end %>
