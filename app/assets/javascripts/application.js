@@ -14,3 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+JSON.equals = function(arg1,arg2){
+  return JSON.stringify(arg1) === JSON.stringify(arg2);
+}

@@ -103,8 +103,8 @@
 
   <div class="form-group">
     <%= f.label :horarios, "Horários" %> <br/>
-    <%= link_to 'Adicionar Horário', new_horario_path,
-                 {:remote => true, 'data-toggl' =>  "modal", 'data-target' => 'modal-window', class: "btn btn-default"}  %>
+    <%= link_to ('<span class="glyphicon glyphicon-plus-sign"></span> Adicionar Horário').html_safe, new_horario_path,
+                 {:remote => true, 'data-toggl' =>  "modal", 'data-target' => 'modal-window', class: "btn btn-default", escape: false}  %>
   </div>
 
   <div class="actions margin-top-3">
