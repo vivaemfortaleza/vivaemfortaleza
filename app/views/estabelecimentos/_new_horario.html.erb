@@ -10,14 +10,14 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Início do Funcionamento</label>
-            <input type='text' class="form-control" name='inicio' id='inicio'/>
+            <input type='text' class="form-control time" name='inicio' id='inicio' required/>
           </div>
         </div>
 
         <div class="col-md-6">
           <div class="form-group">
             <label>Termino do Funcionamento</label>
-            <input type='text' class="form-control" name='termino' id='termino'/>
+            <input type='text' class="form-control time" name='fim' id='fim' required=""/>
           </div>
         </div>
       </div>
@@ -26,7 +26,7 @@
         <div class="col-md-12">
           <div class="form-group">
             <label>Dia(s) da Semana</label>
-            <select class="form-control" name='horario' id='horario'>
+            <select class="form-control" name='horario' id='horario' required="">
               <option value="SEG-SEX">Segunda a Sexta...</option>
               <option value='SAB-DOM'>Sábado e Domingo...</option>
               <option value='DOM-DOM'>Domingo a Domingo...</option>
@@ -46,8 +46,7 @@
 
     <div class="modal-footer">
       <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
-      <button class="btn btn-danger" id='add-horario-button'><span class="glyphicon glyphicon-plus"></span> Adicionar Horário</button>
+      <button class="btn btn-danger" id='adicionarHorarioButton'><span class="glyphicon glyphicon-plus"></span> Adicionar Horário</button>
     </div>
   </div>
 </div>
-<%= end %>

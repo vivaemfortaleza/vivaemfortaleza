@@ -1,7 +1,6 @@
 $("#modal-window").html("<%= escape_javascript(render 'new_horario') %>");
 $("#modal-window").modal('show');
-
-var horarios = [];
+$('.time').mask('00:00:00');
 
 var proccesor = {
   from: function(json){
@@ -10,12 +9,29 @@ var proccesor = {
   }
 }
 
-$("#add-horario-button").click(function(){
+$("#adicionarHorarioButton").click(function(){
+  var horarios = di.get('horarios');
   var horario = {
     inicio : $('#inicio').val(),
     fim : $('#fim').val(),
     horario: $("#horario").val()
   };
 
-
+  horarios.push(horario);
+  render(horarios);
+  $("#modal-window").modal('hide');
 });
+
+function render(horarios){
+  $('.horarios').html('');
+  console.log(horarios);
+  for(var h in horarios){
+    var horario = horarios[h];
+    var tr = $("<tr/>");
+    tr.append($("<td/>").text(horarios[h].inicio));
+    tr.append($("<td/>").text(horarios[h].fim));
+    tr.append($("<td/>").text(horarios[h].horario));
+
+    $(".horarios").append(tr);
+  }
+}

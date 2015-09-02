@@ -105,6 +105,17 @@
     <%= f.label :horarios, "Horários" %> <br/>
     <%= link_to ('<span class="glyphicon glyphicon-plus-sign"></span> Adicionar Horário').html_safe, new_horario_path,
                  {:remote => true, 'data-toggl' =>  "modal", 'data-target' => 'modal-window', class: "btn btn-default", escape: false}  %>
+
+    <table class="table table-striped">
+      <thead>
+        <th>Horário</th>
+        <th>Início</th>
+        <th>Fim</th>
+      </thead>
+      <tbody class="horarios">
+
+      </tbody>
+    </table>
   </div>
 
   <div class="actions margin-top-3">
