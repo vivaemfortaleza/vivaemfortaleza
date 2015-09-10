@@ -101,13 +101,15 @@
     <%= f.check_box(:estacionamento) %>
   </div>
 
+  <%# Usar estrategia do field for %>
   <div class="form-group">
     <%= f.label :horarios, "Horários" %> <br/>
-    <%= link_to ('<span class="glyphicon glyphicon-plus-sign"></span> Adicionar Horário').html_safe, new_horario_path,
-                 {:remote => true, 'data-toggle' =>  "modal", 'data-target' => 'modal-window', class: "btn btn-default", escape: false}  %>
-
+    <% f.fields_for :horario_estabelecimentos do |h| %>
+      <%= h.text_field :hora_inicial, class: 'form-control'%>
+    <% end %>
   </div>
-  <%= render partial: 'horarios', collection: @horarios, as: :horarios %>
+
+
 
   <div class="actions margin-top-3">
     <%= f.submit 'Salvar', class: 'btn btn-danger'%>

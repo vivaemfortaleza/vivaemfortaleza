@@ -29,7 +29,7 @@ class EstabelecimentosController < ApplicationController
   # GET /estabelecimentos/new
   def new
     @estabelecimento = Estabelecimento.new
-    @horarios = []
+    @estabelecimento.horario_estabelecimentos.build
   end
 
   # GET /estabelecimentos/1/edit

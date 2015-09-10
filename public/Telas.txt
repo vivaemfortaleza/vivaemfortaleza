@@ -1,0 +1,14 @@
+Telas
+
+* Estabelecimento (20 horas)
+
+* Eventos (20 horas)
+
+* Notícias (10 horas)
+
+Desing do site
+
+* Site com filtros e funcionalidades
+* Coletar informações com o Noandro
+  * Filtro
+  * Eventos
