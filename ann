@@ -1,0 +1,42 @@
+* Telas de Cadastro
+  - Estabelecimentos
+  - Eventos
+  - Usuarios
+  - Categorias
+  - Selos
+  - Usuário
+  - Noticias
+  - Cinema(?)
+    - Filmes
+    - Salas de Exibição
+    - Horário das Seções
+
+* Portal
+  - Home(Definições sobre o que será exposto na página Inicial)
+  - Estabelecimentos(Arte e Cultura, Comer e Beber, Entretenimento e Diversão)
+    - Buscar por categorias
+    - Buscar por filtros (?)
+  - Agenda Cultural
+    - Lista dos eventos em ordem cronológica
+    - Buscar por filtros
+    - Calendário (Lista de Eventos)
+  - Cinema (?)
+    - Filmes
+    - Salas de Exibição
+    - Horário das Seções
+  - Login
+    - Esqueci minha senha
+    - Cadastre-se
+    - Login via (twitter, facebook)
+
+
+
+************************** Dúvidas ********************************
+
+1) Esse modulo de Cinema, tu ainda vai querer que ele permaneça?
+2) O que exatamente tu deseja na home page? (Fiz aquela, mas era mais pra te mostrar o modelo que trabalho)
+  - Informações?
+  - Noticias?
+  - Alguns Eventos Selecionados?
+  - Preciso que tu me responda isso, pois preciso saber exatamente saber como tu quer ela pra modelar o novo layout.
+3) Esse banner de noticias, preciso saber o que exatamente tu quer com ele. Ficou vago no rascunho, preciso de informações dele pra modelagem dos dados.

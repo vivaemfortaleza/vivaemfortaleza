@@ -1,0 +1,17 @@
+<table class="table table-striped">
+  <thead>
+    <th>Dia</th>
+    <th>Início</th>
+    <th>Fim</th>
+  </thead>
+
+  <tbody>
+    <% @horarios.each do |horario| %>
+      <tr>
+        <td><%= horario.inicio %></td>
+        <td><%= horario.fim %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>

@@ -2,12 +2,19 @@ class EstabelecimentosController < ApplicationController
   before_action :set_estabelecimento, only: [:show, :edit, :update, :destroy]
 
   def new_horario
+    @horario = HorarioEstabelecimento.new
     respond_to do |format|
       format.html
       format.js
     end
   end
-  
+
+  def horarios
+    respond_to do |format|
+      format.html
+    end
+  end
+
   # GET /estabelecimentos
   # GET /estabelecimentos.json
   def index
@@ -22,6 +29,7 @@ class EstabelecimentosController < ApplicationController
   # GET /estabelecimentos/new
   def new
     @estabelecimento = Estabelecimento.new
+    @horarios = []
   end
 
   # GET /estabelecimentos/1/edit
