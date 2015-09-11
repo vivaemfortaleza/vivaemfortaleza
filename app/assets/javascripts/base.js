@@ -20,3 +20,13 @@ Array.prototype.checkIf = function(predicate){
   }
   return false;
 }
+
+/********************************************************/
+/*********************** jQuery *************************/
+/********************************************************/
+/********************************************************/
+
+// nested, nested-form, nested-table
+$('.nested-form').each(function(index){
+  this.nestedForm = this.clone();
+});

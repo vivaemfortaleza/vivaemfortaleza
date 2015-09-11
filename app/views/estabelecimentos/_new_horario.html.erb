@@ -1,53 +1,23 @@
+<%= fields_for :horario do |horario_form| %>
 
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-      <h3 id="myModalLabel">Horários</h3>
+  <div class="row nested">
+
+    <div class="col-xs-2">
+      <%= horario_form.text_field :hora_inicial, class: 'form-control', placeholder: "Início de Funcionamento" %>
     </div>
 
-    <div class="modal-body">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form-group">
-            <label>Início do Funcionamento</label>
-            <input type='text' class="form-control time" name='inicio' id='inicio' required/>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="form-group">
-            <label>Termino do Funcionamento</label>
-            <input type='text' class="form-control time" name='fim' id='fim' required=""/>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="form-group">
-            <label>Dia(s) da Semana</label>
-            <select class="form-control" name='horario' id='horario' required="">
-              <option value="SEG-SEX">Segunda a Sexta...</option>
-              <option value='SAB-DOM'>Sábado e Domingo...</option>
-              <option value='DOM-DOM'>Domingo a Domingo...</option>
-              <option value="0">Domingo</option>
-              <option value="1">Segunda-Feira</option>
-              <option value="2">Terça-Feira</option>
-              <option value="3">Quarta-Feira</option>
-              <option value="4">Quinta-Feira</option>
-              <option value="5">Sexta-Feira</option>
-              <option value="6">Sábado</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
+    <div class="col-xs-2">
+      <%= horario_form.text_field :hora_final, class: 'form-control', placeholder: "Termino de Funcionamento" %>
     </div>
 
-    <div class="modal-footer">
-      <button class="btn" data-dismiss="modal" aria-hidden="true">Fechar</button>
-      <button class="btn btn-danger" id='adicionarHorarioButton'><span class="glyphicon glyphicon-plus"></span> Adicionar Horário</button>
+    <div class="col-xs-2">
+      <%= combo_dias_semana :horario, :dia %>
     </div>
+
+    <div class="col-xs-2">
+      <%= horario_form.button "Adicionar", class: 'btn btn-danger nested-add-button' %>
+    </div>
+
   </div>
-</div>
+
+<% end %>

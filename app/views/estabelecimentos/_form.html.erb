@@ -88,6 +88,11 @@
   </div>
 
   <div class="form-group">
+    <%= f.label :estacionamento, "Estacionamento" %> <br/>
+    <%= f.text_field(:estacionamento, class: 'form-control') %>
+  </div>
+
+  <div class="form-group">
     <%= f.label :selos %> <br/>
     <% Selo.all.each do |selo| %>
       <label class="checkbox-inline">
@@ -96,19 +101,11 @@
     <% end %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :estacionamento, "Possui Estacionamento?" %> <br/>
-    <%= f.check_box(:estacionamento) %>
-  </div>
-
   <%# Usar estrategia do field for %>
   <div class="form-group">
     <%= f.label :horarios, "Horários" %> <br/>
-    <% f.fields_for :horario_estabelecimentos do |h| %>
-      <%= h.text_field :hora_inicial, class: 'form-control'%>
-    <% end %>
+    <%= render "new_horario", locals: { horario: @estabelecimento.horario_estabelecimentos } %>
   </div>
-
 
 
   <div class="actions margin-top-3">

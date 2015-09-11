@@ -1,4 +1,5 @@
 class EstabelecimentosController < ApplicationController
+  include ComboHelper
   before_action :set_estabelecimento, only: [:show, :edit, :update, :destroy]
 
   def new_horario
