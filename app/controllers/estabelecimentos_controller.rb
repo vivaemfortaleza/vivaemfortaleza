@@ -95,8 +95,8 @@ class EstabelecimentosController < ApplicationController
                                               :email,
                                               :site,
                                               :fanpage,
-                                              horario_estabelecimentos: [:hora_inicial,
-                                                                         :hora_final,
-                                                                         :dia])
+                                              horario_estabelecimentos_attributes:[:hora_inicial,
+                                                                                   :hora_final,
+                                                                                   :dia])
     end
 end
