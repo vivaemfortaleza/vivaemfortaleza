@@ -1,3 +1,7 @@
+<script>
+$('.nested-form .nested-remove-button').hide();
+</script>
+
 <%= form_for(@estabelecimento) do |f| %>
   <% if @estabelecimento.errors.any? %>
     <div class="alert alert-danger">
@@ -104,7 +108,9 @@
   <%# Usar estrategia do field for %>
   <div class="form-group">
     <%= f.label :horarios, "Horários" %> <br/>
-    <%= render "new_horario", locals: { horario: @estabelecimento.horario_estabelecimentos } %>
+    <%= f.fields_for :horario_estabelecimentos do |horario_form| %>
+      <%= render partial: "new_horario", locals: { form: horario_form } %>
+    <% end %>
   </div>
 
 

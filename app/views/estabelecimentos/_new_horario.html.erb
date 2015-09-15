@@ -1,27 +1,24 @@
-<%= fields_for :horario do |horario_form| %>
 <div class="nested-form">
 
   <div class="row nested margin-top-1">
 
     <div class="col-xs-2">
-      <%= horario_form.text_field :hora_inicial, class: 'form-control', placeholder: "Início de Funcionamento" %>
+      <%= form.text_field :hora_inicial, class: 'form-control', placeholder: "Início de Funcionamento" %>
     </div>
 
     <div class="col-xs-2">
-      <%= horario_form.text_field :hora_final, class: 'form-control', placeholder: "Termino de Funcionamento" %>
+      <%= form.text_field :hora_final, class: 'form-control', placeholder: "Termino de Funcionamento" %>
     </div>
 
     <div class="col-xs-2">
-      <%= combo_dias_semana :horario, :dia %>
+      <%= combo_dias_semana :horario_estabelecimentos, :dia %>
     </div>
 
     <div class="col-xs-2">
-      <%= horario_form.button "Adicionar", class: 'btn btn-danger nested-add-button', type: 'button' %>
-      <%= horario_form.button "Remover", class: 'btn btn-danger nested-remove-button', type: 'button' %>
+      <%= form.button "Adicionar", class: 'btn btn-danger nested-add-button', type: 'button' %>
+      <%= form.button "Remover", class: 'btn btn-danger nested-remove-button', type: 'button' %>
     </div>
 
   </div>
 
 </div>
-
-<% end %>

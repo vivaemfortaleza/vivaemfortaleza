@@ -40,6 +40,7 @@ class EstabelecimentosController < ApplicationController
   # POST /estabelecimentos
   # POST /estabelecimentos.json
   def create
+    puts(estabelecimento_params)
     @estabelecimento = Estabelecimento.new(estabelecimento_params)
 
     respond_to do |format|
@@ -85,6 +86,17 @@ class EstabelecimentosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def estabelecimento_params
-      params.require(:estabelecimento).permit(:nome, :endereco, :numero, :bairro, :cidade, :estado, :email, :site, :fanpage)
+      params.require(:estabelecimento).permit(:nome,
+                                              :endereco,
+                                              :numero,
+                                              :bairro,
+                                              :cidade,
+                                              :estado,
+                                              :email,
+                                              :site,
+                                              :fanpage,
+                                              horario_estabelecimentos: [:hora_inicial,
+                                                                         :hora_final,
+                                                                         :dia])
     end
 end
