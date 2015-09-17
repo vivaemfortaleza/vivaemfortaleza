@@ -14,6 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require jquery_nested_form
+//= require jquery.inputmask
+//= require jquery.inputmask.extensions
+//= require jquery.inputmask.numeric.extensions
+//= require jquery.inputmask.date.extensions
+
+jQuery(function($){
+    $(".hora").mask("99:99");
+});
 
 JSON.equals = function(arg1,arg2){
   return JSON.stringify(arg1) === JSON.stringify(arg2);

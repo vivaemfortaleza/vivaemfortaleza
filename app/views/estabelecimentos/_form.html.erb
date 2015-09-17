@@ -1,8 +1,4 @@
-<script>
-$('.nested-form .nested-remove-button').hide();
-</script>
-
-<%= form_for(@estabelecimento) do |f| %>
+<%= nested_form_for(@estabelecimento) do |f| %>
   <% if @estabelecimento.errors.any? %>
     <div class="alert alert-danger">
       Erros de validação:
@@ -100,7 +96,7 @@ $('.nested-form .nested-remove-button').hide();
     <%= f.label :selos %> <br/>
     <% Selo.all.each do |selo| %>
       <label class="checkbox-inline">
-        <%= f.check_box(:selos, {:multiple => true}, selo) %> <i class="<%= selo.classe_css %>"></i> <%= selo.nome %>
+        <%= f.check_box(:selos, {:multiple => true}, selo, nil) %> <i class="<%= selo.classe_css %>"></i> <%= selo.nome %>
       </label>
     <% end %>
   </div>
@@ -111,6 +107,8 @@ $('.nested-form .nested-remove-button').hide();
     <%= f.fields_for :horario_estabelecimentos do |horario_form| %>
       <%= render partial: "new_horario", locals: { form: horario_form } %>
     <% end %>
+    <%= f.link_to_add "Adicionar", :horario_estabelecimentos,
+                                    class: 'btn btn-danger margin-top-1' %>
   </div>
 
 

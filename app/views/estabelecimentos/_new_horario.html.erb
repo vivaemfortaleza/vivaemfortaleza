@@ -1,13 +1,14 @@
-<div class="nested-form">
+<div>
 
-  <div class="row nested margin-top-1">
+  <div class="row margin-top-1">
+    <%= form.hidden_field :id %>
 
     <div class="col-xs-2">
-      <%= form.text_field :hora_inicial, class: 'form-control', placeholder: "Início de Funcionamento" %>
+      <%= form.text_field :hora_inicial, class: 'form-control hora', placeholder: "Início de Funcionamento" %>
     </div>
 
     <div class="col-xs-2">
-      <%= form.text_field :hora_final, class: 'form-control', placeholder: "Termino de Funcionamento" %>
+      <%= form.text_field :hora_final, class: 'form-control hora', placeholder: "Termino de Funcionamento" %>
     </div>
 
     <div class="col-xs-2">
@@ -15,8 +16,7 @@
     </div>
 
     <div class="col-xs-2">
-      <%= form.button "Adicionar", class: 'btn btn-danger nested-add-button', type: 'button' %>
-      <%= form.button "Remover", class: 'btn btn-danger nested-remove-button', type: 'button' %>
+      <%= form.link_to_remove "Remover", class: 'btn btn-danger' %>
     </div>
 
   </div>

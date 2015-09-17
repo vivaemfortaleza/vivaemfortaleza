@@ -82,6 +82,7 @@ class EstabelecimentosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_estabelecimento
       @estabelecimento = Estabelecimento.find(params[:id])
+      puts @estabelecimento
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -97,6 +98,8 @@ class EstabelecimentosController < ApplicationController
                                               :fanpage,
                                               horario_estabelecimentos_attributes:[:hora_inicial,
                                                                                    :hora_final,
-                                                                                   :dia])
+                                                                                   :dia,
+                                                                                   :id,
+                                                                                   :_destroy])
     end
 end
