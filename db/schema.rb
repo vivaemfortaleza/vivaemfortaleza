@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915005027) do
+ActiveRecord::Schema.define(version: 20150917232211) do
 
   create_table "estabelecimentos", force: :cascade do |t|
     t.string   "nome"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20150915005027) do
     t.string   "fanpage"
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
-    t.integer  "selos_id"
     t.decimal  "menor_preco",    precision: 8, scale: 2
     t.decimal  "maior_preco",    precision: 8, scale: 2
     t.boolean  "estacionamento"

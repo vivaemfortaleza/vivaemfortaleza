@@ -57,6 +57,7 @@ class EstabelecimentosController < ApplicationController
   # PATCH/PUT /estabelecimentos/1
   # PATCH/PUT /estabelecimentos/1.json
   def update
+    puts(estabelecimento_params)
     respond_to do |format|
       if @estabelecimento.update(estabelecimento_params)
         format.html { redirect_to estabelecimentos_url, notice: 'Estabelecimento atualizado com sucesso.' }
@@ -96,6 +97,8 @@ class EstabelecimentosController < ApplicationController
                                               :email,
                                               :site,
                                               :fanpage,
+                                              :estacionamento,
+                                              :selo_ids => [],
                                               horario_estabelecimentos_attributes:[:hora_inicial,
                                                                                    :hora_final,
                                                                                    :dia,

@@ -92,25 +92,33 @@
     <%= f.text_field(:estacionamento, class: 'form-control') %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :selos %> <br/>
-    <% Selo.all.each do |selo| %>
-      <label class="checkbox-inline">
-        <%= f.check_box(:selos, {:multiple => true}, selo, nil) %> <i class="<%= selo.classe_css %>"></i> <%= selo.nome %>
-      </label>
-    <% end %>
+  <div class="panel panel-danger">
+    <div class="panel-heading"><%= f.label :selos %> <br/></div>
+    <div class="panel-body">
+      <div class="form-group">
+        <% Selo.all.each do |selo| %>
+          <label class="checkbox-inline">
+            <%= f.check_box(:selo_ids, {:multiple => true}, selo.id, nil) %>
+            <i class="<%= selo.classe_css %>"></i>
+            <%= selo.nome %>
+          </label>
+        <% end %>
+      </div>
+    </div>
   </div>
 
-  <%# Usar estrategia do field for %>
-  <div class="form-group">
-    <%= f.label :horarios, "Horários" %> <br/>
-    <%= f.fields_for :horario_estabelecimentos do |horario_form| %>
-      <%= render partial: "new_horario", locals: { form: horario_form } %>
-    <% end %>
-    <%= f.link_to_add "Adicionar", :horario_estabelecimentos,
-                                    class: 'btn btn-danger margin-top-1' %>
+  <div class="panel panel-danger">
+    <div class="panel-heading"><%= f.label :horarios, "Horários" %> <br/></div>
+    <div class="panel-body">
+      <div class="form-group">
+        <%= f.fields_for :horario_estabelecimentos do |horario_form| %>
+          <%= render partial: "new_horario", locals: { form: horario_form } %>
+        <% end %>
+        <%= f.link_to_add "Adicionar", :horario_estabelecimentos,
+                                        class: 'btn btn-danger margin-top-1' %>
+      </div>
+    </div>
   </div>
-
 
   <div class="actions margin-top-3">
     <%= f.submit 'Salvar', class: 'btn btn-danger'%>
