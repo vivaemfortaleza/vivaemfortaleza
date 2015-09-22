@@ -1,10 +1,10 @@
 module ComboHelper
 
-  def combo_dias_semana(id, modelo)
-    select id, modelo,
-               options_for_select(dias_semana.invert.to_a),
-               {},
-               {class: "form-control"}
+  def combo_dias_semana(form,prop)
+    form.select prop,
+                options_for_select(dias_semana.invert.to_a, form.object[prop]),
+                {},
+                {class: "form-control"}
   end
 
   def dias_semana

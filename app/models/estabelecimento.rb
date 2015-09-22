@@ -12,5 +12,6 @@ class Estabelecimento < ActiveRecord::Base
                         :site,
                         :fanpage,
                         :message => "não pode ser vazio"
+  
 
 end
