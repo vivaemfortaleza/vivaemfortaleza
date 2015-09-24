@@ -1,4 +1,4 @@
-<%= nested_form_for(@estabelecimento) do |f| %>
+<%= nested_form_for @estabelecimento, html: { multipart: true } do |f| %>
   <% if @estabelecimento.errors.any? %>
     <div class="alert alert-danger">
       Erros de validação:
@@ -119,6 +119,17 @@
       </div>
     </div>
   </div>
+
+  <div class="panel panel-danger">
+    <div class="panel-heading"><%= f.label :fotos %> <br/></div>
+    <div class="panel-body">
+      <div class="form-group">
+        <%= f.label :fotos, "Estacionamento" %> <br/>
+        <input type='file' name='attachments_array' multiple class="btn btn-danger"/>
+      </div>
+    </div>
+  </div>
+
 
   <div class="actions margin-top-3">
     <%= f.submit 'Salvar', class: 'btn btn-danger'%>
