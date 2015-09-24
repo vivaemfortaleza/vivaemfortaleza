@@ -98,6 +98,7 @@ class EstabelecimentosController < ApplicationController
                                               :site,
                                               :fanpage,
                                               :estacionamento,
+                                              :anexos => [],
                                               :selo_ids => [],
                                               horario_estabelecimentos_attributes:[:hora_inicial,
                                                                                    :hora_final,

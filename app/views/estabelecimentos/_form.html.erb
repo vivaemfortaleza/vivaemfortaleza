@@ -125,8 +125,10 @@
     <div class="panel-body">
       <div class="form-group">
         <%= f.label :fotos, "Estacionamento" %> <br/>
-        <input type='file' name='attachments_array' multiple class="btn btn-danger"/>
-      </div>
+        <input type='file' name='anexos' multiple class="btn btn-danger"/>
+        <%= @estabelecimento.arquivo_imagems.length %>
+
+    </div>
     </div>
   </div>
 
