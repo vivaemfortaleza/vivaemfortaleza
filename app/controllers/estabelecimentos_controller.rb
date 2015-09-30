@@ -40,11 +40,11 @@ class EstabelecimentosController < ApplicationController
   # POST /estabelecimentos
   # POST /estabelecimentos.json
   def create
-    puts(estabelecimento_params)
     @estabelecimento = Estabelecimento.new(estabelecimento_params)
 
     respond_to do |format|
       if @estabelecimento.save
+        efetuar_upload_imagens
         format.html { redirect_to estabelecimentos_url, notice: 'Estabelecimento criado com sucesso.' }
         format.json { render :index, status: :created, location: @estabelecimento }
       else
@@ -57,9 +57,9 @@ class EstabelecimentosController < ApplicationController
   # PATCH/PUT /estabelecimentos/1
   # PATCH/PUT /estabelecimentos/1.json
   def update
-    puts(estabelecimento_params)
     respond_to do |format|
       if @estabelecimento.update(estabelecimento_params)
+        efetuar_upload_imagens
         format.html { redirect_to estabelecimentos_url, notice: 'Estabelecimento atualizado com sucesso.' }
         format.json { render :index, status: :ok, location: @estabelecimento }
       else
@@ -106,4 +106,15 @@ class EstabelecimentosController < ApplicationController
                                                                                    :id,
                                                                                    :_destroy])
     end
+
+    def efetuar_upload_imagens
+      puts "CHEGOU"
+      puts params[:anexos]
+      if params[:anexos]
+        params[:anexos].each { |arquivo|
+          @estabelecimento.arquivo_imagems.create(arquivo: arquivo)
+        }
+      end
+    end
+
 end

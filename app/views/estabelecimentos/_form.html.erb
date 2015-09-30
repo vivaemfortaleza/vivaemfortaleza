@@ -124,8 +124,8 @@
     <div class="panel-heading"><%= f.label :fotos %> <br/></div>
     <div class="panel-body">
       <div class="form-group">
-        <%= f.label :fotos, "Estacionamento" %> <br/>
-        <input type='file' name='anexos' multiple class="btn btn-danger"/>
+        <%= f.label :fotos, "Fotos" %> <br/>
+        <%= file_field_tag "anexos[]", type: :file, multiple: true %>
         <%= @estabelecimento.arquivo_imagems.length %>
 
     </div>
