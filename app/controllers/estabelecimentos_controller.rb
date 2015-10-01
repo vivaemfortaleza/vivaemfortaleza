@@ -108,8 +108,6 @@ class EstabelecimentosController < ApplicationController
     end
 
     def efetuar_upload_imagens
-      puts "CHEGOU"
-      puts params[:anexos]
       if params[:anexos]
         params[:anexos].each { |arquivo|
           @estabelecimento.arquivo_imagems.create(arquivo: arquivo)

@@ -1,0 +1,8 @@
+var deleteImagem = function(id){
+  if(confirm("Deseja realmente excluir esta imagem?")){
+    var form = $(this).closest('form');
+    var element = $(this).closest('col-md-4');
+    form.append($("<input type='hidden' name='imagens_removidas[]'/>").val(id));
+    $(element).remove();
+  }
+};

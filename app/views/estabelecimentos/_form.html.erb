@@ -125,10 +125,24 @@
     <div class="panel-body">
       <div class="form-group">
         <%= f.label :fotos, "Fotos" %> <br/>
-        <%= file_field_tag "anexos[]", type: :file, multiple: true %>
-        <%= @estabelecimento.arquivo_imagems.length %>
+        <span class="btn btn-danger btn-file">
+          Selecione... <%= file_field_tag "anexos[]", type: :file, multiple: true %>
+        </span>
 
-    </div>
+        <% @estabelecimento.arquivo_imagems.each_with_index do |imagem, index| %>
+          <%= raw "<div class='row'>" if index % 3 == 0 %>
+            <div class="col-md-4">
+              <div class="upload-image">
+                <%= image_tag imagem.arquivo.url(:medium) %>
+                <button class="delete btn btn-danger" type="button" onclick="deleteImagem(<%= imagem.id %>)">
+                  <span class="glyphicon glyphicon-trash"></span>
+                </button>
+              </div>
+            </div>
+          <%= raw "</div>" if index % 3 == 2 || index >= @estabelecimento.arquivo_imagems.size  %>
+        <% end %>
+
+      </div>
     </div>
   </div>
 
