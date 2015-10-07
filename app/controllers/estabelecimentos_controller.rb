@@ -100,7 +100,8 @@ class EstabelecimentosController < ApplicationController
                                               :estacionamento,
                                               :anexos => [],
                                               :selo_ids => [],
-                                              horario_estabelecimentos_attributes:[:hora_inicial,
+                                              :imagens_removidas => [],
+                                              :horario_estabelecimentos_attributes => [:hora_inicial,
                                                                                    :hora_final,
                                                                                    :dia,
                                                                                    :id,
@@ -113,6 +114,15 @@ class EstabelecimentosController < ApplicationController
           @estabelecimento.arquivo_imagems.create(arquivo: arquivo)
         }
       end
+
+      if params[:imagens_removidas]
+        params[:imagens_removidas].each do |imagem_id|
+          imagem = ArquivoImagem.find(imagem_id)
+          imagem.arquivo.clear
+          imagem.destroy
+        end
+      end
+
     end
 
 end

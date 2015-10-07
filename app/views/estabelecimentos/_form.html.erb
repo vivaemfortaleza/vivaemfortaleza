@@ -129,18 +129,18 @@
           Selecione... <%= file_field_tag "anexos[]", type: :file, multiple: true %>
         </span>
 
-        <% @estabelecimento.arquivo_imagems.each_with_index do |imagem, index| %>
-          <%= raw "<div class='row'>" if index % 3 == 0 %>
+        <div class="row margin-top-2">
+          <% @estabelecimento.arquivo_imagems.each_with_index do |imagem, index| %>
             <div class="col-md-4">
               <div class="upload-image">
                 <%= image_tag imagem.arquivo.url(:medium) %>
-                <button class="delete btn btn-danger" type="button" onclick="deleteImagem(<%= imagem.id %>)">
+                <button class="delete btn btn-danger delete-imagem" type="button" imagem-id="<%= imagem.id %>">
                   <span class="glyphicon glyphicon-trash"></span>
                 </button>
               </div>
             </div>
-          <%= raw "</div>" if index % 3 == 2 || index >= @estabelecimento.arquivo_imagems.size  %>
-        <% end %>
+          <% end %>
+        </div>
 
       </div>
     </div>
