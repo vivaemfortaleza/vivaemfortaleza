@@ -124,28 +124,49 @@
     <div class="panel-heading"><%= f.label :fotos %> <br/></div>
     <div class="panel-body">
       <div class="form-group">
-        <%= f.label :fotos, "Fotos" %> <br/>
-        <span class="btn btn-danger btn-file">
-          Selecione... <%= file_field_tag "anexos[]", type: :file, multiple: true %>
-        </span>
 
-        <div class="row margin-top-2">
-          <% @estabelecimento.arquivo_imagems.each_with_index do |imagem, index| %>
-            <div class="col-md-4">
-              <div class="upload-image">
-                <%= image_tag imagem.arquivo.url(:medium) %>
-                <button class="delete btn btn-danger delete-imagem" type="button" imagem-id="<%= imagem.id %>">
-                  <span class="glyphicon glyphicon-trash"></span>
-                </button>
+        <div class="well">
+          <div class="form-group">
+            <%= f.label "Logotipo" %> <br/>
+            <%= file_field_tag "logotipo", type: :file %>
+          </div>
+          <% if @estabelecimento.logotipo %>
+            <div class="row">
+              <div class="col-md-12">
+                <%= image_tag @estabelecimento.logotipo.arquivo.url %>
               </div>
             </div>
           <% end %>
         </div>
 
+        <div class="well">
+          <div class="form-group">
+            <%= f.label "Foto da Capa" %> <br/>
+            <%= file_field_tag "capa", type: :file %>
+          </div>
+        </div>
+
+        <div class="well">
+          <%= f.label :fotos, "Fotos" %> <br/>
+          <%= file_field_tag "anexos[]", type: :file, multiple: true %>
+
+          <div class="row margin-top-2">
+            <% @estabelecimento.arquivo_imagems.each_with_index do |imagem, index| %>
+              <div class="col-md-4">
+                <div class="upload-image">
+                  <%= image_tag imagem.arquivo.url(:medium) %>
+                  <button class="delete btn btn-danger delete-imagem" type="button" imagem-id="<%= imagem.id %>">
+                    <span class="glyphicon glyphicon-trash"></span>
+                  </button>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-
 
   <div class="actions margin-top-3">
     <%= f.submit 'Salvar', class: 'btn btn-danger'%>

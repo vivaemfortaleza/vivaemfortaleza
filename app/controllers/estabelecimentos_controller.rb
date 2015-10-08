@@ -98,6 +98,8 @@ class EstabelecimentosController < ApplicationController
                                               :site,
                                               :fanpage,
                                               :estacionamento,
+                                              :logotipo,
+                                              :capa,
                                               :anexos => [],
                                               :selo_ids => [],
                                               :imagens_removidas => [],
@@ -109,11 +111,25 @@ class EstabelecimentosController < ApplicationController
     end
 
     def efetuar_upload_imagens
+      processar_imagem = lambda { |imagem, registro|
+        if imagem
+          if registro
+            registro.arquivo.clear
+            registro.destroy
+          end
+
+          registro = ArquivoImagem.create(arquivo: imagem)
+        end
+      }
+
       if params[:anexos]
         params[:anexos].each { |arquivo|
           @estabelecimento.arquivo_imagems.create(arquivo: arquivo)
         }
       end
+
+      processar_imagem.call(params[:capa], @estabelecimento.capa)
+      processar_imagem.call(params[:logotipo], @estabelecimento.logotipo)
 
       if params[:imagens_removidas]
         params[:imagens_removidas].each do |imagem_id|

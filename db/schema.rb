@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150925165756) do
+ActiveRecord::Schema.define(version: 20151008004603) do
 
   create_table "arquivo_imagems", force: :cascade do |t|
     t.datetime "created_at",           null: false
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20150925165756) do
     t.decimal  "menor_preco",    precision: 8, scale: 2
     t.decimal  "maior_preco",    precision: 8, scale: 2
     t.boolean  "estacionamento"
+    t.integer  "logotipo"
+    t.integer  "capa"
   end
 
   create_table "estabelecimentos_selos", id: false, force: :cascade do |t|

@@ -9,7 +9,9 @@ deleteImagem = () ->
     form.append($("<input type='hidden' name='imagens_removidas[]'/>").val(id));
     $(element).remove();
 
-$ ->
+load = ->
+  console.log "Passando por aqui"
   $(".delete-imagem").click(deleteImagem)
 
-console.log "Passando por aqui"
+$(document).ready(load);
+$(document).on('page:load', load)
